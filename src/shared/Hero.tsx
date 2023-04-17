@@ -1,6 +1,8 @@
 import React from "react";
 import { API_BASE_URL } from "../utils";
 import Link from "next/link";
+import book2 from "../../public/book2.jpg";
+import Image from "next/image";
 
 const getBookList = async () => {
   const res = await fetch(`${API_BASE_URL}/books`);
@@ -21,7 +23,7 @@ const Hero = async () => {
         {books?.map((item: any) => (
           <Link href={`/bookDetail/${item.id}`} key={item.id}>
             <div className='item'>
-              <img src='https://picsum.photos/400/300' alt='' />
+              <Image src={book2} alt='pic' width={100} height={100} />
               <div>
                 <h2>{item.name}</h2>
                 <p>{item.type}</p>
