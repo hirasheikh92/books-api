@@ -3,6 +3,14 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-}
+  async rewrites() {
+    return [
+      {
+        source: "/api/:path*",
+        destination: "https://simple-books-api.glitch.me/:path*",
+      },
+    ];
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
